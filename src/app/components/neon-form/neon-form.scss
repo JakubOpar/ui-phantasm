@@ -1,0 +1,83 @@
+@use '../../../styles/variables' as vars;
+
+.container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.form-container {
+  border: 2px solid aqua;
+  border-radius: 30px;
+  width: 650px;
+  height: 450px;
+  background-color: vars.$form-primary-color;
+
+  .form-header {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 20%;
+    width: 100%;
+
+    span {
+      font-size: 36px;
+      color: aqua;
+    }
+  }
+
+  .form-body {
+    height: 60%;
+  }
+
+  .form-actions {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 20%;
+
+    button {
+      width: 250px;
+      height: 50px;
+      border-radius: 10px;
+      font-size: 24px;
+      border: 2px solid aqua;
+      text-align: center;
+      background-color: vars.$form-secondary-color;
+      color: aqua;
+    }
+  }
+
+  .row {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding-top: 25px;
+    padding-bottom: 25px;
+    width: 100%;
+
+    .col {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      width: 45%;
+
+      label {
+        font-size: 24px;
+        color: aqua;
+        margin-right: 30px;
+      }
+
+      input {
+        width: 250px;
+        height: 50px;
+        border-radius: 10px;
+        font-size: 24px;
+        border: 2px solid aqua;
+        text-align: center;
+        background-color: vars.$form-secondary-color;
+        color: aqua;
+      }
+    }
+  }
+}
