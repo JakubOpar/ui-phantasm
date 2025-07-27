@@ -7,7 +7,10 @@
 }
 
 .form-container {
-  border: 2px solid aqua;
+  border-left: 5px solid vars.$form-border-color-primary;
+  border-right: 5px solid vars.$form-border-color-primary;
+  border-bottom: 5px solid vars.$form-border-color-secondary;
+  border-top: 5px solid vars.$form-border-color-secondary;
   border-radius: 30px;
   width: 650px;
   height: 450px;
@@ -22,7 +25,7 @@
 
     span {
       font-size: 36px;
-      color: aqua;
+      color: vars.$form-text-color;
     }
   }
 
@@ -41,10 +44,10 @@
       height: 50px;
       border-radius: 10px;
       font-size: 24px;
-      border: 2px solid aqua;
+      border: 2px solid vars.$form-input-border-color;
       text-align: center;
       background-color: vars.$form-secondary-color;
-      color: aqua;
+      color: vars.$form-button-text-color;
     }
   }
 
@@ -64,7 +67,7 @@
 
       label {
         font-size: 24px;
-        color: aqua;
+        color: vars.$form-text-color;
         margin-right: 30px;
       }
 
@@ -73,11 +76,40 @@
         height: 50px;
         border-radius: 10px;
         font-size: 24px;
-        border: 2px solid aqua;
+        border: 2px solid vars.$form-input-border-color;
         text-align: center;
         background-color: vars.$form-secondary-color;
-        color: aqua;
+        color: vars.$form-text-color;
       }
     }
   }
+}
+
+.gradient-text {
+  background: linear-gradient(270deg, aqua, vars.$form-button-border-color-secondary);
+  background-size: 400% 400%;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  animation: gradientShift 6s ease infinite;
+}
+
+@keyframes gradientShift {
+  0% { background-position: 0% 50%; }
+  50% { background-position: 100% 50%; }
+  100% { background-position: 0% 50%; }
+}
+
+.animated-border {
+  border: 5px solid transparent;
+  border-radius: 30px;
+  background: linear-gradient(vars.$form-primary-color, vars.$form-primary-color) padding-box,
+  linear-gradient(270deg, aqua, vars.$form-button-border-color-secondary, aqua) border-box;
+  background-size: 200% 200%;
+  animation: borderGradient 3s ease infinite;
+}
+
+@keyframes borderGradient {
+  0% { background-position: 0% 50%; }
+  50% { background-position: 100% 50%; }
+  100% { background-position: 0% 50%; }
 }
