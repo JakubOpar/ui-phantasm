@@ -44,10 +44,40 @@
       height: 50px;
       border-radius: 10px;
       font-size: 24px;
-      border: 2px solid vars.$form-input-border-color;
+      border: 3px solid vars.$form-input-border-color;
       text-align: center;
       background-color: vars.$form-secondary-color;
-      color: vars.$form-button-text-color;
+      color: gray;
+      transition: all 0.3s ease;
+      position: relative;
+
+      &:hover,
+      &:focus {
+        border: 3px solid transparent;
+        background: linear-gradient(vars.$form-secondary-color, vars.$form-secondary-color) padding-box,
+        linear-gradient(270deg, aqua, vars.$form-button-border-color-secondary, aqua) border-box;
+        background-size: 300% 300%;
+        animation: borderMove 3s ease infinite;
+        transform: scale(1.05);
+        color: transparent;
+
+        &::before {
+          content: attr(data-text);
+          position: absolute;
+          top: 0; left: 0; right: 0; bottom: 0;
+          background: linear-gradient(270deg, aqua, vars.$form-button-border-color-secondary);
+          background-size: 400% 400%;
+          -webkit-background-clip: text;
+          -webkit-text-fill-color: transparent;
+          animation: gradientShift 6s ease infinite;
+          display: flex;
+          align-items: center;
+          justify-content: center;
+          font-size: 24px;
+          border-radius: 10px;
+          pointer-events: none;
+        }
+      }
     }
   }
 
@@ -76,7 +106,7 @@
         height: 50px;
         border-radius: 10px;
         font-size: 24px;
-        border: 2px solid vars.$form-input-border-color;
+        border: 3px solid vars.$form-input-border-color;
         text-align: center;
         background-color: vars.$form-secondary-color;
         color: vars.$form-text-color;
@@ -109,6 +139,12 @@
 }
 
 @keyframes borderGradient {
+  0% { background-position: 0% 50%; }
+  50% { background-position: 100% 50%; }
+  100% { background-position: 0% 50%; }
+}
+
+@keyframes borderMove {
   0% { background-position: 0% 50%; }
   50% { background-position: 100% 50%; }
   100% { background-position: 0% 50%; }
